@@ -89,30 +89,22 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MUE-8V-unn" userLabel="Types StackView">
                                                     <rect key="frame" x="295" y="22.333333333333329" width="70" height="30"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xiO-oR-c14" userLabel="TypeOne ImageView">
+                                                        <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="H8j-20-s10" userLabel="PokemonTypeOne" customClass="PokemonTypeView" customModule="Pokedex" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="UHn-5P-kin"/>
-                                                                <constraint firstAttribute="height" constant="30" id="i6k-B4-hzn"/>
+                                                                <constraint firstAttribute="width" constant="30" id="TVV-lP-AYK"/>
+                                                                <constraint firstAttribute="height" constant="30" id="y74-6N-hJZ"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="15"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AsE-QK-fDU" userLabel="TypeTwo ImageView">
+                                                        </view>
+                                                        <view contentMode="center" restorationIdentifier="pokemonTypeTwo" translatesAutoresizingMaskIntoConstraints="NO" id="HYe-AH-Wkf" userLabel="PokemonTypeTwo" customClass="PokemonTypeView" customModule="Pokedex" customModuleProvider="target">
                                                             <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="4v6-Wr-RRR"/>
-                                                                <constraint firstAttribute="width" constant="30" id="Hfg-IG-LmF"/>
+                                                                <constraint firstAttribute="height" constant="30" id="5hc-VE-7ML"/>
+                                                                <constraint firstAttribute="width" constant="30" id="UEe-e2-Us8"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="15"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
+                                                        </view>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -131,14 +123,15 @@
                                             <outlet property="idLabel" destination="1Dr-yq-IqS" id="NBI-UE-dBv"/>
                                             <outlet property="nameLabel" destination="LPv-Ol-iHj" id="bU1-VA-sim"/>
                                             <outlet property="pictureImageView" destination="hJV-db-2g2" id="6JN-zG-Mds"/>
-                                            <outlet property="primaryTypeImageView" destination="xiO-oR-c14" id="apA-9f-8DS"/>
-                                            <outlet property="secondaryTypeImageView" destination="AsE-QK-fDU" id="dSZ-uK-Jpz"/>
+                                            <outlet property="pokemonTypeOneView" destination="H8j-20-s10" id="miR-tX-wik"/>
+                                            <outlet property="pokemonTypeTwoView" destination="HYe-AH-Wkf" id="UjW-z7-Uzm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXi-ed-Ka6">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mXi-ed-Ka6">
+                                <rect key="frame" x="0.0" y="85" width="375" height="641"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mB7-fM-tFE">
                                         <rect key="frame" x="169" y="302" width="37" height="37"/>
@@ -151,13 +144,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rGL-DH-dkm" secondAttribute="trailing" id="Bbo-WO-Mxp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mXi-ed-Ka6" secondAttribute="bottom" id="QaQ-9u-NSX"/>
-                            <constraint firstItem="mXi-ed-Ka6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VNN-eu-gIK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rGL-DH-dkm" secondAttribute="bottom" id="cBR-8m-TgR"/>
-                            <constraint firstItem="mXi-ed-Ka6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eXc-mh-UjU"/>
                             <constraint firstItem="rGL-DH-dkm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hzg-76-oHP"/>
                             <constraint firstItem="rGL-DH-dkm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tVL-Ci-4w7"/>
-                            <constraint firstItem="mXi-ed-Ka6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wh7-yG-0qH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <userDefinedRuntimeAttributes>
@@ -286,6 +275,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3B-0d-Zhh" userLabel="Detail View" customClass="PokemonDetailView" customModule="Pokedex" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="842" width="375" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="999" id="dRH-om-CrZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z6S-hL-C1X">
                                 <rect key="frame" x="107.66666666666669" y="331" width="160" height="160"/>
                                 <constraints>
@@ -306,24 +307,18 @@
                                     <action selector="dismissButton:" destination="fwX-Bx-clY" eventType="touchUpInside" id="Kug-zU-SpT"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GK-Nb-x1J" userLabel="Pokemon Type View" customClass="PokemonTypeView" customModule="Pokedex" customModuleProvider="target">
-                                <rect key="frame" x="132.66666666666666" y="668" width="110" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9nZ-w4-Jht"/>
-                                    <constraint firstAttribute="width" constant="110" id="pyt-F5-GhB"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="z6S-hL-C1X" firstAttribute="centerY" secondItem="JkM-2k-HZG" secondAttribute="centerY" priority="999" id="AYK-7a-7Z8"/>
-                            <constraint firstItem="JkM-2k-HZG" firstAttribute="bottom" secondItem="5GK-Nb-x1J" secondAttribute="bottom" constant="80" id="B1F-W9-7ZE"/>
                             <constraint firstItem="z6S-hL-C1X" firstAttribute="centerX" secondItem="JkM-2k-HZG" secondAttribute="centerX" id="ByS-7d-xJj"/>
-                            <constraint firstItem="5GK-Nb-x1J" firstAttribute="centerX" secondItem="JkM-2k-HZG" secondAttribute="centerX" id="CYb-jS-tmf"/>
+                            <constraint firstItem="M3B-0d-Zhh" firstAttribute="top" secondItem="JkM-2k-HZG" secondAttribute="top" priority="900" constant="34" id="KfQ-Iv-geA"/>
                             <constraint firstItem="NlV-aw-cZy" firstAttribute="top" secondItem="JkM-2k-HZG" secondAttribute="top" id="Ofm-uu-JPO"/>
+                            <constraint firstItem="M3B-0d-Zhh" firstAttribute="trailing" secondItem="JkM-2k-HZG" secondAttribute="trailing" id="WQF-FU-uUt"/>
                             <constraint firstItem="z6S-hL-C1X" firstAttribute="top" secondItem="JkM-2k-HZG" secondAttribute="top" priority="900" constant="50" id="hTN-qv-bl6"/>
                             <constraint firstItem="NlV-aw-cZy" firstAttribute="leading" secondItem="JkM-2k-HZG" secondAttribute="leading" constant="20" id="lVt-cT-gm8"/>
+                            <constraint firstAttribute="bottom" secondItem="M3B-0d-Zhh" secondAttribute="bottom" constant="-30" id="ndw-TR-t5K"/>
+                            <constraint firstItem="M3B-0d-Zhh" firstAttribute="leading" secondItem="JkM-2k-HZG" secondAttribute="leading" id="rWU-y6-D9T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JkM-2k-HZG"/>
                         <userDefinedRuntimeAttributes>
@@ -337,18 +332,20 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="detailView" destination="M3B-0d-Zhh" id="Uc2-xi-hk2"/>
+                        <outlet property="detailViewHeightConstraint" destination="dRH-om-CrZ" id="WvB-XP-CZE"/>
+                        <outlet property="detailViewTopConstraint" destination="KfQ-Iv-geA" id="2iX-t6-8gR"/>
                         <outlet property="gradientView" destination="Qvm-dL-sdi" id="YID-62-aAb"/>
                         <outlet property="pokemonImageView" destination="z6S-hL-C1X" id="RbD-MR-Azr"/>
                         <outlet property="pokemonImageViewHeightConstraint" destination="tdF-fz-gnK" id="NkO-6y-c0C"/>
                         <outlet property="pokemonImageViewTopConstraint" destination="hTN-qv-bl6" id="JnX-xh-MfA"/>
                         <outlet property="pokemonImageViewVerticallyConstraint" destination="AYK-7a-7Z8" id="fh0-MK-XE2"/>
                         <outlet property="pokemonImageViewWidthConstraint" destination="1LI-a1-z6w" id="VFq-xj-K4z"/>
-                        <outlet property="pokemonTypeView" destination="5GK-Nb-x1J" id="sv1-NF-UIS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVC-vu-ZCJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-370.39999999999998" y="937.6847290640394"/>
+            <point key="canvasLocation" x="-370.39999999999998" y="936.88155922038993"/>
         </scene>
     </scenes>
     <resources>

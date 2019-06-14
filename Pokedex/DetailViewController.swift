@@ -17,8 +17,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var pokemonImageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var pokemonImageViewVerticallyConstraint: NSLayoutConstraint!
     @IBOutlet weak var pokemonImageViewTopConstraint: NSLayoutConstraint!
-        
-    @IBOutlet weak var pokemonTypeView: PokemonTypeView!
+    
+    @IBOutlet weak var detailView: PokemonDetailView!
+    
+    @IBOutlet weak var detailViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var detailViewTopConstraint: NSLayoutConstraint!
     
     var pokemon: Pokemon?
     
@@ -26,10 +29,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.initalConfig()
-        
-        if let type = pokemon?.types.first {
-            self.pokemonTypeView.config(type: type)
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,9 +44,13 @@ class DetailViewController: UIViewController {
             
             self.pokemonImageViewVerticallyConstraint.priority = UILayoutPriority(900)
             self.pokemonImageViewTopConstraint.priority = UILayoutPriority(999)
-            self.pokemonImageViewTopConstraint.constant = 20
+            self.pokemonImageViewTopConstraint.constant = 15
             self.pokemonImageViewHeightConstraint.constant = 80
             self.pokemonImageViewWidthConstraint.constant = 80
+            
+            self.detailViewHeightConstraint.priority = UILayoutPriority(900)
+            self.detailViewTopConstraint.priority = UILayoutPriority(999)
+            self.detailViewTopConstraint.constant = 70
             
             UIView.animate(withDuration: 1, animations: {
                 self.pokemonImageView.alpha = 1
@@ -68,6 +71,7 @@ class DetailViewController: UIViewController {
             requestMaker.make(withEndPoint: .details(query: pokemon.id)) {
                 (pokemonDetail: Pokemon) in
                 self.animateImagePokemonToTop()
+                self.detailView.config(pokemon: pokemonDetail)
             }
         }
     }

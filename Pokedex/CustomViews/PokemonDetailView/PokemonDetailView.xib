@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokemonDetailView" customModule="Pokedex" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="pcf-d2-IOJ"/>
+                <outlet property="pokemonDescriptionLabel" destination="dhU-OS-anM" id="vGk-Pz-koO"/>
+                <outlet property="pokemonFirstTypeView" destination="Fpv-k0-er0" id="1Dn-IM-eK0"/>
+                <outlet property="pokemonNameLabel" destination="ixm-su-KdP" id="Wgn-oN-aVt"/>
+                <outlet property="pokemonSecondTypeView" destination="6jx-MU-Ibj" id="tP3-7v-mH8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Content View">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixm-su-KdP">
+                    <rect key="frame" x="120.5" y="79" width="173" height="33"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                    <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="center" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UNE-f9-Uvx">
+                    <rect key="frame" x="93" y="120" width="228" height="30"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fpv-k0-er0" customClass="PokemonTypeView" customModule="Pokedex" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="110" id="jxo-kh-1OW"/>
+                                <constraint firstAttribute="height" constant="30" id="xIA-aC-iaD"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jx-MU-Ibj" customClass="PokemonTypeView" customModule="Pokedex" customModuleProvider="target">
+                            <rect key="frame" x="118" y="0.0" width="110" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="C06-5w-x43"/>
+                                <constraint firstAttribute="width" constant="110" id="jZe-VR-Juf"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Xx7-85-DOb"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhU-OS-anM">
+                    <rect key="frame" x="20" y="165" width="374" height="19.5"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                    <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Goo-Uf-I2E">
+                    <rect key="frame" x="189" y="209.5" width="36.5" height="18"/>
+                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.61960784313725492" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Goo-Uf-I2E" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="BbQ-Ky-XtN"/>
+                <constraint firstItem="ixm-su-KdP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="35" id="GNe-JK-40s"/>
+                <constraint firstItem="dhU-OS-anM" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="HWG-E5-McZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dhU-OS-anM" secondAttribute="trailing" constant="20" id="TeI-mZ-0Hb"/>
+                <constraint firstItem="Goo-Uf-I2E" firstAttribute="top" secondItem="dhU-OS-anM" secondAttribute="bottom" constant="25" id="VqN-Nn-aVK"/>
+                <constraint firstItem="UNE-f9-Uvx" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="WXW-yV-hjA"/>
+                <constraint firstItem="dhU-OS-anM" firstAttribute="top" secondItem="UNE-f9-Uvx" secondAttribute="bottom" constant="15" id="acf-gD-BWa"/>
+                <constraint firstItem="UNE-f9-Uvx" firstAttribute="top" secondItem="ixm-su-KdP" secondAttribute="bottom" constant="8" id="d60-Zm-bOx"/>
+                <constraint firstItem="dhU-OS-anM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="dbA-0S-jmZ"/>
+                <constraint firstItem="ixm-su-KdP" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="u18-vL-e0J"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

@@ -34,9 +34,13 @@ class PokemonTypeView: UIView {
         
     }
     
-    func config(type: PokemonType) {
+    func config(type: PokemonType, showLabel: Bool) {
         self.typeImageView.image = type.icon
-        self.typeLabel.text = type.rawValue.uppercased()
+        if showLabel {
+            self.typeLabel.text = type.rawValue.uppercased()
+        } else {
+            self.typeLabel.isHidden = true
+        }
         self.contentView.backgroundColor = type.color
     }
     

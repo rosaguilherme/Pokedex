@@ -13,23 +13,25 @@ class PokemonTableViewCell: UITableViewCell {
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var primaryTypeImageView: UIImageView!
-    @IBOutlet weak var secondaryTypeImageView: UIImageView!
+    
+    @IBOutlet weak var pokemonTypeOneView: PokemonTypeView!
+    @IBOutlet weak var pokemonTypeTwoView: PokemonTypeView!
     
     func config(with model: Pokemon){
         pictureImageView.loadImage(from: model.image)
         
         nameLabel.text = model.name.capitalized
         idLabel.text = "#\(model.id.leftPadding(toLength: 3, withPad: "0"))"
-        primaryTypeImageView.image = model.types.first?.icon
-        primaryTypeImageView.backgroundColor = model.types.first?.color
+        
+        if let pokemonFirstType = model.types.first {
+            pokemonTypeOneView.config(type: pokemonFirstType, showLabel: false)
+        }
         
         if model.types.count > 1 {
-            secondaryTypeImageView.image = model.types[1].icon
-            secondaryTypeImageView.backgroundColor = model.types[1].color
-            secondaryTypeImageView.isHidden = false
+            pokemonTypeTwoView.config(type: model.types[1], showLabel: false)
+            pokemonTypeTwoView.isHidden = false
         } else {
-            secondaryTypeImageView.isHidden = true
+            pokemonTypeTwoView.isHidden = true
         }
     }
     

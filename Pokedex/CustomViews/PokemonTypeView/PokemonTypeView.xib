@@ -22,14 +22,14 @@
             <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="center" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kau-jM-AIF">
+                <stackView opaque="NO" contentMode="center" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kau-jM-AIF">
                     <rect key="frame" x="8" y="0.0" width="134" height="30"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mBO-tW-WOB">
-                            <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="92.333333333333329" height="30"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfX-yk-Qas">
-                            <rect key="frame" x="67" y="0.0" width="67" height="30"/>
+                            <rect key="frame" x="92.333333333333329" y="0.0" width="41.666666666666671" height="30"/>
                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
