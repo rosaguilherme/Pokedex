@@ -46,8 +46,6 @@ extension PokemonListViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 extension PokemonListViewController: UITableViewDelegate {

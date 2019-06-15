@@ -17,7 +17,9 @@ class PokemonDetailView: UIView {
     @IBOutlet weak var pokemonSecondTypeView: PokemonTypeView!
     
     @IBOutlet weak var pokemonDescriptionLabel: UILabel!
+    @IBOutlet weak var statsTableView: UITableView!
     
+    var pokemonStats: [Stats]?
     let nibName = "PokemonDetailView"
     
     override init(frame: CGRect) {
@@ -35,6 +37,9 @@ class PokemonDetailView: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(nibName, owner: self, options: nil)
         contentView.fixInView(self)
+        
+        self.statsTableView.delegate = self
+        self.statsTableView.dataSource = self
     }
     
     func config(pokemon: Pokemon) {
@@ -55,4 +60,27 @@ class PokemonDetailView: UIView {
             self.pokemonDescriptionLabel.text = pokemon.description
         }
     }
+}
+
+extension PokemonDetailView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let pokemonStats = self.pokemonStats {
+            return pokemonStats.count
+        }
+        
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonStatsView", for: indexPath) as! PokemonStatsView
+        
+        if let pokemonStats = self.pokemonStats {
+            cell.config(stats: pokemonStats[indexPath.row])
+        }
+        return cell
+    }
+}
+
+extension PokemonDetailView: UITableViewDelegate {
+    
 }
